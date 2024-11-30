@@ -19,7 +19,7 @@ server <- function(input, output, session) {
    # new_data_transformed <- bake(myrecipe, new_data = new_data)
     
     # ทำนายผลด้วย workflow โมเดล
-    probs <- predict(model, new_data, type = "prob")
+    probs <- stats::predict(model, new_data, type = "prob")
     
     # รวม outcome_A กับ probability ของคลาส pass
     prob_data <- new_data %>%
@@ -37,7 +37,7 @@ server <- function(input, output, session) {
     h3("ผลการทำนาย")
   })
   # แสดงผลลัพธ์ในตาราง
-  output$probPlot <- renderPlotly({
+  output$probPlot <- renderPlot({
     prob_data <- prediction()
     
     output$probPlot <- renderPlot({
