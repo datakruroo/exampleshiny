@@ -47,8 +47,6 @@ p2 <- use_data %>%
 p1/p2
 ```
 
-
-
 ## สร้างโมเดลทำนาย
 
 ```{r}
@@ -83,7 +81,6 @@ glmnet_spec <- logistic_reg(penalty = tune(), mixture = tune()) %>%
   set_engine("glmnet") %>% 
   set_mode("classification")
 ```
-
 
 ### glmnet workflow and tuning
 
@@ -147,9 +144,6 @@ saveRDS(glmnet_final, "glmnet_model.rds")
 saveRDS(prep, "glmnet_recipe.rds")
 ```
 
-
-
-
 ```{r}
 ## more ui
 # UI
@@ -207,5 +201,3 @@ ui <- dashboardPage(
   )
 )
 ```
-
-
